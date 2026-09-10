@@ -86,7 +86,7 @@ and [Docker Compose](https://docs.docker.com/compose/install/) installed.
 2. Copy the Docker env template and fill in your `GEMINI_API_KEY`:
 
    ```bash
-   cp .env.docker .env
+   cp .env.example.docker .env.docker
    ```
 
    _(Only `GEMINI_API_KEY` is required — database credentials use sensible defaults)._
@@ -94,7 +94,7 @@ and [Docker Compose](https://docs.docker.com/compose/install/) installed.
 3. Run Docker Compose to build the images and start the containers:
 
    ```bash
-   docker compose up --build
+   docker compose --env-file .env.docker up --build
    ```
 
 ⭐ The API will be available at `http://localhost:8080`.
