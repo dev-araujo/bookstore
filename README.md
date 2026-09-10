@@ -89,6 +89,8 @@ and [Docker Compose](https://docs.docker.com/compose/install/) installed.
    cp .env.docker .env
    ```
 
+   _(Only `GEMINI_API_KEY` is required — database credentials use sensible defaults)._
+
 3. Run Docker Compose to build the images and start the containers:
 
    ```bash
