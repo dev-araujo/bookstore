@@ -1,91 +1,79 @@
-<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=5965E0&labelColor=121214" alt="License"> <img src="https://img.shields.io/badge/Angular_22-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" /> <img src="https://img.shields.io/badge/Native_Federation-4B32C3?style=for-the-badge" alt="Native Federation" /> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /> <img src="https://img.shields.io/badge/rxjs-%23B7178C.svg?style=for-the-badge&logo=rxjs&logoColor=white" alt="RxJS" /> <img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest" />
+<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=5965E0&labelColor=121214" alt="License"> <img src="https://img.shields.io/badge/LANGUAGE-VERSION-COLOR?style=for-the-badge&logo=ICON&logoColor=white" alt="Language" /> <img src="https://img.shields.io/badge/FRAMEWORK-VERSION-COLOR?style=for-the-badge&logo=ICON&logoColor=white" alt="Framework" /> <img src="https://img.shields.io/badge/TOOL-VERSION-COLOR?style=for-the-badge&logo=ICON&logoColor=white" alt="Tool" /> <img src="https://img.shields.io/badge/DATABASE-VERSION-COLOR?style=for-the-badge&logo=ICON&logoColor=white" alt="Database" />
 
-# CryptoTracker MFE
+# Project Name
 
-O **CryptoTracker MFE** é uma aplicação para visualização e acompanhamento de criptomoedas, estruturada como **microfrontends**: um shell orquestra três aplicações independentes (mercado, análise e watchlist), carregadas em runtime via **Native Federation**, consumindo a API pública da [Coinranking](https://coinranking.com/) para exibir cotações, gráficos e uma watchlist pessoal.
+The **Project Name** is a one-line description of what the project does and what
+technologies it uses. Add a second sentence if context is needed.
 
-![Mercado](./docs/market.png)
+![Screenshot](./docs/screenshot.png)
 
 ---
 
 ## Stack 🚀
 
-**Frontend**
+**Backend / Frontend** (pick one or both)
 
-- **Angular (v22)** — standalone, signals, zoneless
-- **Native Federation** — composição dos microfrontends em runtime
-- **TypeScript (v6)**
-- **RxJS**
-- **SCSS** com design tokens próprios
-- **Vitest**
+- **Language (version)** — key characteristics
+- **Framework (version)** — key characteristics
+- **Build tool**
+- **Database** — hosting / connection details
 
-**API (Externa)**
+**External Services / AI / APIs**
 
-- **Coinranking API**
+- **Service name** — what it is used for
 
 ---
 
-## Configuração de Ambiente 🔐
+## Environment Configuration 🔐
 
-Antes de rodar o projeto, é necessário configurar o seu token da API da Coinranking:
+Before running the project, configure your credentials:
 
-1. Crie uma cópia do arquivo `.env.example` e renomeie para `.env`.
-2. Abra o arquivo `.env` e insira sua chave da API:
+1. Copy `.env.example` and rename it to `.env`.
+2. Open `.env` and fill in your values:
 
    ```env
-   COINRANKING_API_KEY=seu_token_real_aqui
+   KEY=value
    ```
 
-   _(O arquivo `.env` não é enviado ao GitHub por segurança)._
-
-Os environments de cada microfrontend são gerados a partir do `.env`.
+   _(The `.env` file is excluded from Git for security)._
 
 ---
 
-## Rodando Localmente ⚡️
+## Running Locally ⚡️
 
 Existem duas maneiras de rodar o projeto: **manualmente** ou com **Docker**.
 
 ### Manualmente ⚒️
 
-Node 22 ou superior.
+**Prerequisites:** list them.
 
-1. Clone o repositório:
-
-   ```bash
-   git clone https://github.com/dev-araujo/crypto-tracker-mfe.git
-   ```
-
-2. Instale as dependências:
+1. Clone the repository:
 
    ```bash
-   npm install
+   git clone https://github.com/USER/REPO.git
    ```
 
-3. Execute os servidores de desenvolvimento:
+2. Install / build / run:
 
    ```bash
-   npm start
+   # your run command
    ```
 
-   _Obs: O comando `npm start` gera os environments e o manifest de federação a partir do seu `.env` antes de subir as quatro aplicações._
+⭐ The application will be available at `http://localhost:PORT`.
 
-⭐ A aplicação estará disponível em `http://localhost:4200`.
-
-Para subir um microfrontend isolado: `npm run start:market` (ou `start:analytics`, `start:watchlist`, `start:shell`).
-
-Outros scripts: `npm run build` (build de produção) e `npm test` (suíte Vitest).
+Other commands: `make build`, `make test`.
 
 ### Com Docker 🐋
 
 #### 📋 Pré-requisitos
 
-Certifique-se de que você tem o [Docker](https://www.docker.com/get-started) e o [Docker Compose](https://docs.docker.com/compose/install/) instalados.
+Certifique-se de que você tem o [Docker](https://www.docker.com/get-started)
+e o [Docker Compose](https://docs.docker.com/compose/install/) instalados.
 
-1. Clone o repositório:
+1. Clone the repository:
 
    ```bash
-   git clone https://github.com/dev-araujo/crypto-tracker-mfe.git
+   git clone https://github.com/USER/REPO.git
    ```
 
 2. Execute o Docker Compose para construir as imagens e iniciar os contêineres:
@@ -94,12 +82,20 @@ Certifique-se de que você tem o [Docker](https://www.docker.com/get-started) e 
    docker compose up --build
    ```
 
-⭐ A aplicação estará disponível em `http://localhost:4200`.
+⭐ A aplicação estará disponível em `http://localhost:PORT`.
 
 ---
 
-#### Autor 👷
+## Architecture & Conventions 🏗️
 
-<img src="https://avatars.githubusercontent.com/u/97068163?v=4" width=120 />
+- **Key convention 1**
+- **Key convention 2**
+- **Key convention 3**
 
-[Adriano P Araujo](https://www.linkedin.com/in/araujocode/)
+---
+
+#### Author 👷
+
+<img src="https://avatars.githubusercontent.com/u/YOUR_ID?v=4" width=120 />
+
+[Your Name](https://www.linkedin.com/in/YOUR_LINKEDIN/)

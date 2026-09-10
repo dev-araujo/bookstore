@@ -42,6 +42,10 @@ Before running the project, configure your database and AI credentials:
 
 ## Running Locally ⚡️
 
+Existem duas maneiras de rodar o projeto: **manualmente** ou com **Docker**.
+
+### Manualmente ⚒️
+
 **Prerequisites:** JDK 25+, Maven.
 
 1. Clone the repository:
@@ -65,6 +69,35 @@ Before running the project, configure your database and AI credentials:
 ⭐ The API will be available at `http://localhost:8080`.
 
 Other commands: `mvn -q verify` (build & test), `make build`.
+
+### Com Docker 🐋
+
+#### 📋 Pré-requisitos
+
+Certifique-se de que você tem o [Docker](https://www.docker.com/get-started)
+e o [Docker Compose](https://docs.docker.com/compose/install/) instalados.
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/dev-araujo/bookstore-api.git
+   ```
+
+2. Copy the Docker env template and fill in your `GEMINI_API_KEY`:
+
+   ```bash
+   cp .env.docker .env
+   ```
+
+3. Execute o Docker Compose para construir as imagens e iniciar os contêineres:
+
+   ```bash
+   docker compose up --build
+   ```
+
+⭐ A aplicação estará disponível em `http://localhost:8080`.
+
+O compose sobe dois serviços: **bookstore-db** (PostgreSQL 17) e **bookstore-api** (aplicação). O banco é persistente através de um volume Docker (`pgdata`).
 
 ---
 
