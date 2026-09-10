@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   db:
     image: postgres:17-alpine
@@ -9,7 +7,7 @@ services:
       POSTGRES_USER: ${DB_USER:-bookstore}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-bookstore}
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -25,7 +23,7 @@ services:
       db:
         condition: service_healthy
     environment:
-      DB_URL: jdbc:postgresql://db:5432/bookstore-db?sslmode=require
+      DB_URL: jdbc:postgresql://db:5432/bookstore-db
       DB_USER: ${DB_USER:-bookstore}
       DB_PASSWORD: ${DB_PASSWORD:-bookstore}
       GEMINI_API_KEY: ${GEMINI_API_KEY}
