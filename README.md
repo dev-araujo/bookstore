@@ -42,9 +42,9 @@ Before running the project, configure your database and AI credentials:
 
 ## Running Locally ⚡️
 
-Existem duas maneiras de rodar o projeto: **manualmente** ou com **Docker**.
+There are two ways to run the project: **manually** or with **Docker**.
 
-### Manualmente ⚒️
+### Manually ⚒️
 
 **Prerequisites:** JDK 25+, Maven.
 
@@ -70,12 +70,12 @@ Existem duas maneiras de rodar o projeto: **manualmente** ou com **Docker**.
 
 Other commands: `mvn -q verify` (build & test), `make build`.
 
-### Com Docker 🐋
+### With Docker 🐋
 
-#### 📋 Pré-requisitos
+#### Prerequisites
 
-Certifique-se de que você tem o [Docker](https://www.docker.com/get-started)
-e o [Docker Compose](https://docs.docker.com/compose/install/) instalados.
+Make sure you have [Docker](https://www.docker.com/get-started)
+and [Docker Compose](https://docs.docker.com/compose/install/) installed.
 
 1. Clone the repository:
 
@@ -89,15 +89,15 @@ e o [Docker Compose](https://docs.docker.com/compose/install/) instalados.
    cp .env.docker .env
    ```
 
-3. Execute o Docker Compose para construir as imagens e iniciar os contêineres:
+3. Run Docker Compose to build the images and start the containers:
 
    ```bash
    docker compose up --build
    ```
 
-⭐ A aplicação estará disponível em `http://localhost:8080`.
+⭐ The API will be available at `http://localhost:8080`.
 
-O compose sobe dois serviços: **bookstore-db** (PostgreSQL 17) e **bookstore-api** (aplicação). O banco é persistente através de um volume Docker (`pgdata`).
+The compose spins up two services: **bookstore-db** (PostgreSQL 17) and **bookstore-api** (application). The database persists through a Docker volume (`pgdata`).
 
 ---
 
