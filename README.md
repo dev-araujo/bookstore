@@ -2,7 +2,7 @@
 
 # Bookstore API
 
-The **Bookstore API** is a REST CRUD service built with **Spring Boot 4.1** and **Java 25**, featuring **AI-generated book summaries** powered by **Spring AI** (Google Gemini). Designed as a teaching project for a Spring Boot course, it demonstrates clean layering, explicit JPA entities, and DTO-to-entity mapping without Lombok.
+The **Bookstore API** is a REST CRUD service built with **Spring Boot 4.1** and **Java 25**, featuring **AI-generated book summaries** powered by **Spring AI** (Google Gemini). A learning project demonstrating clean layering, explicit JPA entities, and DTO-to-entity mapping without Lombok.
 
 ---
 
