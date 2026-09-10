@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: bookstore-db
+    environment:
+      POSTGRES_DB: bookstore-db
+      POSTGRES_USER: ${DB_USER:-bookstore}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-bookstore}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-bookstore}"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  app:
+    build: .
+    container_name: bookstore-api
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/bookstore-db?sslmode=require
+      DB_USER: ${DB_USER:-bookstore}
+      DB_PASSWORD: ${DB_PASSWORD:-bookstore}
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+    ports:
+      - "8080:8080"
+
+volumes:
+  pgdata:
